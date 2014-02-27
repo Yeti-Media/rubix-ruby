@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = '0.0.1'
   spec.authors       = ["Yeti Media"]
   spec.email         = ["nicolas55ar@gmail.com"]
-  spec.description   = "Rubix gem"
+  spec.description   = "Wrapper for Rubix Api"
   spec.summary       = "Rubix gem"
   spec.homepage      = ""
   spec.license       = "MIT"

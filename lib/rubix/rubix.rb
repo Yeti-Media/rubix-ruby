@@ -35,7 +35,7 @@ class Rubix
   end
 
   #data: {file: File, remote_file_url: "http://example.com/path/to/scene", method: "corr|inter", min: 80, matching: 'gray|color|HSV'}
-  def histogram(data)
+  def comparison(data)
     error_handler do
       result = client.post("/api/#{version}/patterns/histogram", data.merge(access_token: access_token))
       process_reponse(result)
