@@ -23,13 +23,18 @@ First you need to require the gem and you initialize the client by instantiating
     
     client = Rubix.new(access_token, version, domain)
     
+
 To add a matching pattern you need to pass the _file_ itself or an _file url_ for it, a _label_, and the _category name_ to which the pattern belongs. 
 
-    client.add_pattern({file, remote_file_url, label, category_name})
+    client.add_pattern({file: FIle, remote_file_url: "http://example.com/path/to/scene", label: 'uid', category_name: 'matching'})
     
+To use feature matching, a file or file url is needed, as well as a minimum ratio and a minimum matches amount. 
+  
+  client.feature_matching({file, remote_file_url, mr: 0.9, mma: 150}) 
+
 To compare histogram you can use the comparison method. It needs a file or file url, a comparison method (correlational or intersectional), the minimum percentage of matching, and the color scale to use (grays, color, or hue-saturation-value).
 
-    client.comparison({file: File, remote_file_url: "http://example.com/path/to/scene", method: "corr|inter", min: 80, matching: 'gray|color|HSV'})
+    client.comparison({file, remote_file_url, method: "corr|inter", min: 80, matching: 'gray|color|HSV'})
 
 For OCR, Rubix needs the path to image or the file itself, and optionally, the area to be scanned.
 
