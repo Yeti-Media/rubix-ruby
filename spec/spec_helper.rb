@@ -1,0 +1,5 @@
+#require '../lib/rubix/rubix'
+require File.expand_path('../../lib', __FILE__) + '/rubix/rubix.rb'
+require 'fakeweb'
+require 'faraday'
+require 'json'

@@ -8,7 +8,7 @@ class Rubix
 
   attr_accessor :client, :version, :access_token, :domain
 
-  def initialize(access_token, version = 'v1', domain="api.rubix.io")
+  def initialize(access_token, version = 'v1', domain="http://api.rubix.io")
     self.access_token = access_token
     self.version = version
     self.client = Faraday.new(url: domain) do |f|
@@ -21,7 +21,7 @@ class Rubix
   #data: {file: File, remote_file_url: "http://example.com/path/to/image", label: "uid", category_name: "matching"}
   def add_pattern(data)
     error_handler do
-      result = client.post("/api/#{version}/patterns", {pattern: data,access_token: access_token})
+      result = client.post("/api/#{version}/patterns", {pattern: data, access_token: access_token})
       process_reponse(result)
     end
   end
