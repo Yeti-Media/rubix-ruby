@@ -1,3 +1,6 @@
+require 'json'
+require 'faraday'
+
 class Rubix
 
   class ResponseError < Exception ; end
